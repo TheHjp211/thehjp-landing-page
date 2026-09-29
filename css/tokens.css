@@ -1,0 +1,84 @@
+/* ==========================================================================
+   THEHJP DESIGN TOKENS
+   Strictly aligned with TheHjp Brand Guidelines & Build Brief
+   ========================================================================== */
+
+:root {
+  /* Brand Color Palette */
+  --color-main: #EC3D10;         /* Primary Brand Orange */
+  --color-main-light: #FF5722;   /* Gradient Warm Highlight */
+  --color-main-dark: #C93009;    /* Hover / Active Orange */
+  --color-main-glow: rgba(236, 61, 16, 0.25);
+  
+  --color-bg-dark: #0D0D0D;      /* Deep Dark (Hero 2, Filmmaking) */
+  --color-bg-dark-card: #161616; /* Dark card background */
+  --color-bg-dark-border: rgba(255, 255, 255, 0.12);
+  
+  --color-bg-cream: #F7F4ED;     /* Warm Cream (About, Marketing) */
+  --color-bg-cream-card: #EFECE3;/* Cream card background */
+  --color-sand: #D4C5B0;         /* Sand (Testimonial) */
+  --color-taupe: #8A7A6B;        /* Secondary text / border on light */
+  --color-coal: #2A2520;         /* Main text on light & sand */
+  --color-white: #FFFFFF;
+  
+  /* 5% Accent Palette Options */
+  --color-accent-teal: #2F4A50;  /* Smoky Teal */
+  --color-accent-blue: #2B3640;  /* Slate Blue */
+  --color-accent-olive: #3D4A2E; /* Forest Olive */
+
+  /* Typography Stacks */
+  --font-headline: 'Anton', sans-serif, -apple-system;
+  --font-body: 'Inter', sans-serif, system-ui;
+  --font-subdisplay: 'Playfair Display', Georgia, serif;
+  --font-script: 'Dancing Script', 'Caveat', cursive;
+  --font-script-hand: 'Caveat', cursive;
+  --font-vintage: 'Alfa Slab One', cursive, serif;
+
+  /* Typography Scale */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-md: 1.125rem;    /* 18px */
+  --text-lg: 1.25rem;     /* 20px */
+  --text-xl: 1.5rem;      /* 24px */
+  --text-2xl: 2rem;       /* 32px */
+  --text-3xl: 2.75rem;    /* 44px */
+  --text-4xl: 3.75rem;    /* 60px */
+  --text-5xl: 5rem;       /* 80px */
+  --text-hero: clamp(2.8rem, 6.5vw, 6rem);
+  --text-hero2: clamp(2.4rem, 5.5vw, 5rem);
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Layout */
+  --max-width: 1240px;
+  --max-width-narrow: 880px;
+  --max-width-editorial: 720px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 35px rgba(236, 61, 16, 0.4);
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}

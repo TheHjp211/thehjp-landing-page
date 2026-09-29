@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing &amp; Content — TheHjp | Dịch vụ Chiến lược &amp; Sản xuất</title>
+  <meta name="description" content="Dịch vụ Content Marketing, tư vấn chiến lược thương hiệu và sản xuất chuỗi video ngắn đa kênh cùng TheHjp.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="TheHjp">
+  <link rel="canonical" href="https://thehjp.id.vn/marketing.html">
+  <link rel="icon" type="image/png" href="assets/images/thehjp-mascot.png">
+  <link rel="apple-touch-icon" href="assets/images/thehjp-mascot.png">
+  <meta property="og:title" content="Marketing &amp; Content — TheHjp">
+  <meta property="og:description" content="Dịch vụ Content Marketing, tư vấn chiến lược thương hiệu và sản xuất chuỗi video ngắn đa kênh.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thehjp.id.vn/marketing.html">
+  <meta property="og:image" content="https://thehjp.id.vn/assets/images/marketing-showcase.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Marketing &amp; Content — TheHjp">
+  <meta name="twitter:description" content="Dịch vụ Content Marketing, tư vấn chiến lược thương hiệu và sản xuất chuỗi video ngắn đa kênh.">
+  <meta name="twitter:image" content="https://thehjp.id.vn/assets/images/marketing-showcase.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ══════════════════════════════════════════
+       REELS CAROUSEL SYSTEM
+    ══════════════════════════════════════════ */
+
+    /* Outer section – seamless dark, no borders */
+    .reels-block {
+      background: #0a0a0a;
+      padding: var(--space-12) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reels-header-container,
+    .showcase-header-wrap {
+      margin-bottom: var(--space-8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    .showcase-section-title {
+      color: var(--color-main);
+      font-family: var(--font-headline);
+      font-size: clamp(1.75rem, 4.2vw, 2.5rem);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(14px, 2.5vw, 24px);
+      text-align: center;
+      text-shadow: 0 0 25px rgba(236, 61, 16, 0.35);
+    }
+
+    .showcase-section-title::before,
+    .showcase-section-title::after {
+      content: '';
+      display: inline-block;
+      width: clamp(24px, 4.5vw, 50px);
+      height: 2px;
+      background: var(--color-main);
+      opacity: 0.85;
+      flex-shrink: 0;
+    }
+
+    /* Row: [side-tag] [carousel-wrapper] */
+    .reels-row {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    /* ─── Vertical side tag ─── */
+    .reels-side-tag {
+      flex: 0 0 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      position: relative;
+      z-index: 5;
+      min-height: 100%;
+      overflow: hidden;
+    }
+    .reels-side-tag--right {
+      order: 2;
+    }
+    .reels-side-tag span {
+      display: block;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-family: 'Anton', 'Alfa Slab One', sans-serif;
+      /* Font fills the 160px tag width */
+      font-size: 144px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--color-main);
+      text-transform: uppercase;
+      user-select: none;
+      white-space: nowrap;
+    }
+    /* left tag: text reads upward (bottom → top) */
+    .reels-side-tag--left span {
+      transform: rotate(180deg);
+    }
+    /* right tag: text reads downward (top → bottom) */
+    .reels-side-tag--right span {
+      transform: rotate(0deg);
+    }
+
+    /* ─── Carousel wrapper ─── */
+    .reels-carousel-area {
+      flex: 1;
+      min-width: 0;
+      position: relative;
+      padding: 0;
+    }
+
+    /* Arrow buttons – float over cards */
+    .reels-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      background: rgba(10,10,10,0.75);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .reels-arrow:hover {
+      background: var(--color-main);
+      border-color: var(--color-main);
+      transform: translateY(-50%) scale(1.1);
+    }
+    .reels-arrow--prev { left: 10px; }
+    .reels-arrow--next { right: 10px; }
+    .reels-arrow:disabled { opacity: 0.25; pointer-events: none; }
+
+    /* Track – minimal padding so reels reach screen edge; arrows float over cards */
+    .reels-track {
+      display: flex;
+      gap: 10px;
+      padding: 4px 4px;
+      cursor: grab;
+      user-select: none;
+      transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+      overflow: visible;
+    }
+    .reels-track.is-dragging { cursor: grabbing; transition: none; }
+
+    /* Individual reel card – 5 visible on desktop */
+    .reel-card {
+      flex: 0 0 calc((100% - 4px * 2 - 10px * 4) / 5);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #1a1a1a;
+      border: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+      aspect-ratio: 9 / 16;
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    }
+    .reel-card:hover {
+      transform: translateY(-5px) scale(1.012);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.7), 0 0 0 1.5px rgba(236,61,16,0.4);
+      border-color: rgba(236,61,16,0.3);
+    }
+
+    .reel-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+
+    /* Thumbnail image (shown when poster is available) */
+    .reel-card .reel-thumbnail {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: inherit;
+    }
+
+    /* Placeholder */
+    .reel-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(160deg, #1c1c1c 0%, #111 55%, #080808 100%);
+      color: rgba(255,255,255,0.18);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .reel-placeholder svg { opacity: 0.15; }
+
+    /* Play overlay */
+    .reel-play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.18);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .reel-card:hover .reel-play-overlay { opacity: 1; }
+    .reel-play-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(236,61,16,0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(236,61,16,0.5);
+      transition: transform 0.2s;
+    }
+    .reel-card:hover .reel-play-btn { transform: scale(1.1); }
+
+    /* Label gradient at bottom */
+    .reel-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 32px 12px 12px;
+      background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, transparent 100%);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      line-height: 1.4;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 6px;
+    }
+    .reel-label-right {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .reel-label-tag {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-main);
+      margin-bottom: 3px;
+    }
+
+    /* Dots */
+    .reels-dots {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 20px;
+    }
+    .reels-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      transition: background 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+    .reels-dot.active {
+      background: var(--color-main);
+      transform: scale(1.5);
+    }
+
+    /* Separator between F&B and SME blocks */
+    .reels-separator {
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+      margin: 0 52px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .reel-card { flex: 0 0 calc((100% - 4px * 2 - 10px * 3) / 4); }
+      .reels-side-tag { flex: 0 0 130px; }
+      .reels-side-tag span { font-size: 117px; }
+    }
+    @media (max-width: 780px) {
+      .reel-card { flex: 0 0 calc((100% - 4px * 2 - 10px * 2) / 3); }
+      .reels-side-tag { flex: 0 0 100px; }
+      .reels-side-tag span { font-size: 90px; }
+    }
+    @media (max-width: 520px) {
+      .reel-card { flex: 0 0 calc((100% - 4px * 2 - 10px) / 2); }
+      .reels-track { gap: 8px; }
+      .reels-side-tag { flex: 0 0 70px; }
+      .reels-side-tag span { font-size: 62px; }
+    }
+
+    /* ── Reel Video Modal ── */
+    .reel-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,0.94);
+      align-items: center;
+      justify-content: center;
+    }
+    .reel-modal.is-open { display: flex; }
+    .reel-modal-inner {
+      position: relative;
+      width: min(340px, 88vw);
+      aspect-ratio: 9 / 16;
+      background: #000;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .reel-modal-inner video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .reel-modal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 10;
+      background: rgba(0,0,0,0.65);
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .reel-modal-close:hover { background: var(--color-main); }
+
+    /* ── No separator between same-dark sections ── */
+    .subpage-section.dark,
+    .reels-block,
+    .posters-block {
+      border-bottom: none !important;
+      border-top: none !important;
+    }
+
+    /* ══════════════════════════════════════════
+       POSTERS 3D COVERFLOW & GLASSMORPHISM
+    ══════════════════════════════════════════ */
+    .posters-block {
+      background: #0a0a0a;
+      padding: var(--space-8) 0 var(--space-16) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .posters-ambient-glow {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: clamp(380px, 65vw, 750px);
+      height: clamp(300px, 45vw, 550px);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.75;
+      filter: blur(85px);
+      -webkit-filter: blur(85px);
+      background: radial-gradient(ellipse at center, rgba(236, 61, 16, 0.42) 0%, rgba(255, 87, 34, 0.12) 55%, transparent 75%);
+      transition: background 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+    }
+
+    .posters-stage {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1200px;
+      perspective-origin: 50% 50%;
+      overflow: visible;
+      touch-action: pan-y;
+      user-select: none;
+      -webkit-user-select: none;
+      margin-top: var(--space-4);
+    }
+
+    .posters-carousel {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-style: preserve-3d;
+      outline: none;
+    }
+
+    .poster-card {
+      position: absolute;
+      width: 290px;
+      aspect-ratio: 3 / 4;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: transform 0.65s cubic-bezier(0.2, 0.95, 0.3, 1), 
+                  opacity 0.65s ease, 
+                  filter 0.65s ease, 
+                  box-shadow 0.65s ease;
+      will-change: transform, opacity;
+      transform-origin: center center;
+    }
+
+    .poster-card-glass {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      padding: 9px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.65), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .poster-card.is-active .poster-card-glass {
+      border-color: rgba(255, 255, 255, 0.35);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 
+                  0 0 38px rgba(236, 61, 16, 0.35), 
+                  inset 0 1px 2px rgba(255, 255, 255, 0.4);
+    }
+
+    .poster-img-wrap {
+      width: 100%;
+      height: 100%;
+      border-radius: 13px;
+      overflow: hidden;
+      position: relative;
+      background: #111;
+    }
+
+    .poster-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    .poster-card:hover .poster-img-wrap img {
+      transform: scale(1.03);
+    }
+
+    .poster-card-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(10, 10, 10, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 3px 9px;
+      border-radius: 9999px;
+      z-index: 3;
+    }
+
+    .poster-card-caption {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      right: 8px;
+      background: rgba(12, 12, 12, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 12px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      z-index: 3;
+      transition: background 0.3s ease;
+    }
+
+    .poster-caption-info {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .poster-caption-title {
+      font-family: var(--font-headline);
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #fff;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 0;
+    }
+
+    .poster-caption-sub {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.7);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 2px;
+    }
+
+    .poster-card-tag {
+      background: rgba(236, 61, 16, 0.2);
+      border: 1px solid rgba(236, 61, 16, 0.45);
+      color: var(--color-main);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    /* ── Floating Glass Capsule Bar (Spotify Style) ── */
+    .posters-dock-wrap {
+      margin-top: var(--space-6);
+      position: relative;
+      z-index: 4;
+    }
+
+    .poster-glass-capsule {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 660px;
+      margin: 0 auto;
+      background: rgba(24, 22, 20, 0.55);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 9999px;
+      padding: 8px 16px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+      gap: 12px;
+    }
+
+    .capsule-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .capsule-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #fff;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .capsule-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.08);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .capsule-btn--play {
+      background: var(--color-main);
+      border-color: transparent;
+      color: #fff;
+    }
+
+    .capsule-btn--play:hover {
+      background: var(--color-main-light);
+      box-shadow: 0 0 18px rgba(236, 61, 16, 0.6);
+    }
+
+    .capsule-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 9999px;
+      transition: background 0.2s ease;
+    }
+
+    .capsule-info:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .capsule-thumb {
+      width: 38px;
+      height: 48px;
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: #111;
+    }
+
+    .capsule-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .capsule-meta {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .capsule-title {
+      font-family: var(--font-headline);
+      font-size: 13px;
+      text-transform: uppercase;
+      color: #fff;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .capsule-sub {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.65);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 2px;
+    }
+
+    .capsule-soundwave {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 16px;
+      margin-right: 4px;
+      flex-shrink: 0;
+    }
+
+    .capsule-soundwave .bar {
+      width: 3px;
+      background: var(--color-main);
+      border-radius: 2px;
+      animation: soundWave 1.2s ease-in-out infinite alternate;
+    }
+    .capsule-soundwave .bar-1 { height: 40%; animation-delay: 0.1s; }
+    .capsule-soundwave .bar-2 { height: 85%; animation-delay: 0.3s; }
+    .capsule-soundwave .bar-3 { height: 50%; animation-delay: 0.5s; }
+    .capsule-soundwave .bar-4 { height: 95%; animation-delay: 0.2s; }
+
+    @keyframes soundWave {
+      0% { height: 25%; opacity: 0.35; }
+      100% { height: 100%; opacity: 1; }
+    }
+
+    .capsule-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    /* ── Lightbox Modal ── */
+    .poster-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-6);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+    }
+
+    .poster-lightbox.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .poster-lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(8, 8, 8, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+
+    .poster-lightbox-dialog {
+      position: relative;
+      z-index: 2;
+      max-width: 520px;
+      width: 100%;
+      transform: scale(0.92) translateY(20px);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .poster-lightbox.is-open .poster-lightbox-dialog {
+      transform: scale(1) translateY(0);
+    }
+
+    .poster-lightbox-close {
+      position: absolute;
+      top: -46px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .poster-lightbox-close:hover {
+      background: var(--color-main);
+      border-color: transparent;
+    }
+
+    .poster-lightbox-card {
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+    }
+
+    .poster-lightbox-card img {
+      width: 100%;
+      max-height: 72vh;
+      object-fit: contain;
+      background: #0d0d0d;
+      display: block;
+    }
+
+    .poster-lightbox-footer {
+      padding: 16px 20px;
+      background: rgba(14, 14, 14, 0.9);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .lightbox-footer-title {
+      font-family: var(--font-headline);
+      font-size: 18px;
+      text-transform: uppercase;
+      color: #fff;
+      letter-spacing: 0.04em;
+    }
+
+    .lightbox-footer-sub {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.65);
+      margin-top: 4px;
+    }
+
+    /* ── Responsive adjustments ── */
+    @media (max-width: 768px) {
+      .posters-stage {
+        height: 420px;
+      }
+      .poster-card {
+        width: 230px;
+      }
+      .poster-caption-title {
+        font-size: 12px;
+      }
+      .poster-caption-sub {
+        font-size: 10px;
+      }
+      .poster-glass-capsule {
+        padding: 6px 12px;
+        gap: 8px;
+      }
+      .capsule-meta {
+        max-width: 130px;
+      }
+      .capsule-soundwave {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .posters-stage {
+        height: 380px;
+      }
+      .poster-card {
+        width: 195px;
+      }
+      .capsule-meta {
+        max-width: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Film Grain Noise Overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Header Navigation -->
+  <header class="site-header site-header--light-page" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="TheHjp Home">
+        <div class="brand-logo-icon">
+          <img src="assets/images/thehjp-mascot.png" alt="TheHjp Avatar">
+        </div>
+        <span>TheHjp<span class="dot">.</span></span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-desktop">
+          <li><a href="index.html" class="nav-link" data-i18n="nav.home">Trang chủ</a></li>
+          <li><a href="about.html" class="nav-link" data-i18n="nav.about">Về TheHjp</a></li>
+          <li><a href="marketing.html" class="nav-link active" data-i18n="nav.marketing">Marketing &amp; Content</a></li>
+          <li><a href="filmmaking.html" class="nav-link" data-i18n="nav.filmmaking">Filmmaking &amp; Media</a></li>
+          <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Liên hệ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language selection">
+          <button class="lang-btn active" data-lang="vi" aria-label="Chuyển sang tiếng Việt">VI</button>
+          <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+        </div>
+        <a href="contact.html?service=marketing" class="btn btn-primary btn-sm" data-i18n="nav.cta">Bắt đầu dự án</a>
+        <button class="mobile-toggle" aria-label="Open mobile menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer">
+      <a href="index.html" class="nav-link" data-i18n="nav.home">Trang chủ</a>
+      <a href="about.html" class="nav-link" data-i18n="nav.about">Về TheHjp</a>
+      <a href="marketing.html" class="nav-link active" data-i18n="nav.marketing">Marketing &amp; Content</a>
+      <a href="filmmaking.html" class="nav-link" data-i18n="nav.filmmaking">Filmmaking &amp; Media</a>
+      <a href="contact.html" class="nav-link" data-i18n="nav.contact">Liên hệ</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ══ Page Hero (dark) ══ -->
+    <section class="page-hero dark">
+      <div class="container">
+        <h1 class="page-hero-title" data-i18n="marketingPage.heroTitle">Chiến lược dẫn lối, nội dung chạm đích.</h1>
+        <p class="page-hero-sub" data-i18n="marketingPage.heroSub">
+          Giải pháp toàn diện từ xây dựng kế hoạch, định vị thông điệp cốt lõi đến trực tiếp sản xuất chuỗi nội dung đa kênh cho doanh nghiệp và thương hiệu cá nhân.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══ REELS SHOWCASE (above Core Services) ══ -->
+    <div class="reels-block" id="reelsBlock">
+
+      <div class="container reels-header-container">
+        <h2 class="showcase-section-title" data-i18n="marketingPage.reelsSectionTitle">Reels mà tôi đã sản xuất</h2>
+      </div>
+
+      <!-- ── Block 1: F&B Reels (tag on LEFT) ── -->
+      <div class="reels-row" id="reelsFnbRow">
+
+        <!-- Left tag -->
+        <div class="reels-side-tag reels-side-tag--left" aria-hidden="true">
+          <span data-i18n="marketingPage.reelsFnbLabel">F&amp;B</span>
+        </div>
+
+        <!-- Carousel area -->
+        <div class="reels-carousel-area">
+          <button class="reels-arrow reels-arrow--prev" id="fnbPrev" aria-label="Reel trước" data-i18n-aria="marketingPage.reelsPrevAria">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+
+          <div class="reels-track" id="fnbTrack">
+            <!-- F&B Reel 1 -->
+            <div class="reel-card" data-reel-src="assets/videos/fnb-reel-01.mp4" data-reel-poster="assets/images/thumb-fnb-01" id="fnbCard1" tabindex="0" role="button" aria-label="F&B Reel 1">
+              <div class="reel-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>F&amp;B · 01</span>
+              </div>
+              <div class="reel-play-overlay"><div class="reel-play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div></div>
+              <div class="reel-label"><div class="reel-label-tag">F&amp;B</div><div>Reel 01</div></div>
+            </div>
+            <!-- F&B Reel 2 -->
+            <div class="reel-card" data-reel-src="assets/videos/fnb-reel-02.mp4" data-reel-poster="assets/images/thumb-fnb-02" id="fnbCard2" tabindex="0" role="button" aria-label="F&B Reel 2">
+              <div class="reel-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>F&amp;B · 02</span>
+              </div>
+              <div class="reel-play-overlay"><div class="reel-play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div></div>
+              <div class="reel-label"><div class="reel-label-tag">F&amp;B</div><div>Reel 02</div></div>
+            </div>
+            <!-- F&B Reel 3 -->
+            <div class="reel-card" data-reel-src="assets/videos/fnb-reel-03.mp4" data-reel-poster="assets/images/thumb-fnb-03" id="fnbCard3" tabindex="0" role="button" aria-label="F&B Reel 3">
+              <div class="reel-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>F&amp;B · 03</span>
+              </div>
+              <div class="reel-play-overlay"><div class="reel-play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div></div>
+              <div class="reel-label"><div class="reel-label-tag">F&amp;B</div><div>Reel 03</div></div>
+            </div>
+            <!-- F&B Reel 4 -->
+            <div class="reel-card" data-reel-src="assets/videos/fnb-reel-04.mp4" data-reel-poster="assets/images/thumb-fnb-04" id="fnbCard4" tabindex="0" role="button" aria-label="F&B Reel 4">
+              <div class="reel-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>F&amp;B · 04</span>
+              </div>
+              <div class="reel-play-overlay"><div class="reel-play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div></div>
+              <div class="reel-label"><div class="reel-label-tag">F&amp;B</div><div>Reel 04</div></div>
+            </div>
+            <!-- F&B Reel 5 -->
+            <div class="reel-card" data-reel-src="assets/videos/fnb-reel-05.mp4" data-reel-poster="assets/images/thumb-fnb-05" id="fnbCard5" tabindex="0" role="button" aria-label="F&B Reel 5">
+              <div class="reel-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>F&amp;B · 05</span>
+              </div>
+              <div class="reel-play-overlay"><div class="reel-play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div></div>
+              <div class="reel-label"><div class="reel-label-tag">F&amp;B</div><div>Reel 05</div></div>
+            </div>
+          </div><!-- /.reels-track -->
+
+          <button class="reels-arrow reels-arrow--next" id="fnbNext" aria-label="Reel tiếp theo" data-i18n-aria="marketingPage.reelsNextAria">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div><!-- /.reels-carousel-area -->
+      </div><!-- /.reels-row (F&B) -->
+
+      <div class="reels-dots" id="fnbDots" aria-hidden="true"></div>
+
+      <!-- Thin separator -->
+      <div class="reels-separator" style="margin: var(--space-10) 0;"></div>
+
+      <!-- ── Block 2: SME Reels (tag on RIGHT) ── -->
+      <div class="reels-row" id="reelsSmeRow">
+
+        <!-- Carousel area -->
+        <div class="reels-carousel-area">
+          <button class="reels-arrow reels-arrow--prev" id="smePrev" aria-label="Reel trước" data-i18n-aria="marketingPage.reelsPrevAria">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+
+          <div class="reels-track" id="smeTrack">
+            <!-- SME Reel 1 -->
+            <div class="reel-card" data-reel-src="assets/videos/sme-reel-01.mp4" data-reel-poster="assets/images/thumb-sme-01" id="smeCard1" tabindex="0" role="button" aria-label="SME Reel 1">
+              <div class="reel-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>SME · 01</span>
+              </div>
+              <div class="reel-play-overlay"><div class="reel-play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div></div>
+              <div class="reel-label"><div class="reel-label-tag">SME</div><div>Reel 01</div></div>
+            </div>
+            <!-- SME Reel 2 -->
+            <div class="reel-card" data-reel-src="assets/videos/sme-reel-02.mp4" data-reel-poster="assets/images/thumb-sme-02" id="smeCard2" tabindex="0" role="button" aria-label="SME Reel 2">
+              <div class="reel-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>SME · 02</span>
+              </div>
+              <div class="reel-play-overlay"><div class="reel-play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div></div>
+              <div class="reel-label"><div class="reel-label-tag">SME</div><div>Reel 02</div></div>
+            </div>
+            <!-- SME Reel 3 -->
+            <div class="reel-card" data-reel-src="assets/videos/sme-reel-03.mp4" data-reel-poster="assets/images/thumb-sme-03" id="smeCard3" tabindex="0" role="button" aria-label="SME Reel 3">
+              <div class="reel-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>SME · 03</span>
+              </div>
+              <div class="reel-play-overlay"><div class="reel-play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div></div>
+              <div class="reel-label">
+                <div>
+                  <div class="reel-label-tag">SME</div>
+                  <div>Reel 03</div>
+                </div>
+                <div class="reel-label-right">
+                  <div class="reel-label-tag">TikTok</div>
+                  <div data-i18n="marketingPage.smeReel3Views">17,3K lượt xem</div>
+                </div>
+              </div>
+            </div>
+            <!-- SME Reel 4 -->
+            <div class="reel-card" data-reel-src="assets/videos/sme-reel-04.mp4" data-reel-poster="assets/images/thumb-sme-04" id="smeCard4" tabindex="0" role="button" aria-label="SME Reel 4">
+              <div class="reel-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>SME · 04</span>
+              </div>
+              <div class="reel-play-overlay"><div class="reel-play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div></div>
+              <div class="reel-label"><div class="reel-label-tag">SME</div><div>Reel 04</div></div>
+            </div>
+            <!-- SME Reel 5 -->
+            <div class="reel-card" data-reel-src="assets/videos/sme-reel-05.mp4" data-reel-poster="assets/images/thumb-sme-05" id="smeCard5" tabindex="0" role="button" aria-label="SME Reel 5">
+              <div class="reel-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>SME · 05</span>
+              </div>
+              <div class="reel-play-overlay"><div class="reel-play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div></div>
+              <div class="reel-label"><div class="reel-label-tag">SME</div><div>Reel 05</div></div>
+            </div>
+          </div><!-- /.reels-track -->
+
+          <button class="reels-arrow reels-arrow--next" id="smeNext" aria-label="Reel tiếp theo" data-i18n-aria="marketingPage.reelsNextAria">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div><!-- /.reels-carousel-area -->
+
+        <!-- Right tag -->
+        <div class="reels-side-tag reels-side-tag--right" aria-hidden="true">
+          <span data-i18n="marketingPage.reelsSmeLabel">SME</span>
+        </div>
+      </div><!-- /.reels-row (SME) -->
+
+      <div class="reels-dots" id="smeDots" aria-hidden="true"></div>
+
+    </div><!-- /.reels-block -->
+
+    <!-- ══ POSTER SHOWCASE (3D Cover Flow & Glassmorphism) ══ -->
+    <section class="posters-block" id="postersBlock">
+      <!-- Dynamic Ambient Glow -->
+      <div class="posters-ambient-glow" id="postersAmbientGlow" aria-hidden="true"></div>
+
+      <!-- Section Title: Posters -->
+      <div class="container showcase-header-wrap">
+        <h2 class="showcase-section-title" data-i18n="marketingPage.postersSectionTitle">Thiết kế của tôi</h2>
+      </div>
+
+      <!-- 3D Cover Flow Stage -->
+      <div class="posters-stage" id="postersStage">
+        <div class="posters-carousel" id="postersCarousel" tabindex="0" role="region" aria-label="Bộ sưu tập poster thiết kế">
+
+          <!-- Card 1: ĐÀ NẴNG -->
+          <div class="poster-card" data-index="0" data-glow="rgba(236, 160, 20, 0.45)" data-title-key="marketingPage.poster1Title" data-sub-key="marketingPage.poster1Sub" role="button" tabindex="0" aria-label="Poster 1: ĐÀ NẴNG">
+            <div class="poster-card-glass">
+              <div class="poster-img-wrap">
+                <img src="assets/images/poster-01.jpg" alt="Poster Đà Nẵng - FPT & Vietjet Air" loading="lazy">
+                <div class="poster-card-badge">2025</div>
+              </div>
+              <div class="poster-card-caption">
+                <div class="poster-caption-info">
+                  <div class="poster-caption-title" data-i18n="marketingPage.poster1Title">ĐÀ NẴNG</div>
+                  <div class="poster-caption-sub" data-i18n="marketingPage.poster1Sub">Poster Sự Kiện Du Lịch · FPT University & Vietjet Air</div>
+                </div>
+                <div class="poster-card-tag" data-i18n="marketingPage.tagTravel">Du lịch</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: BUSINESS WEBINAR -->
+          <div class="poster-card" data-index="1" data-glow="rgba(45, 110, 240, 0.45)" data-title-key="marketingPage.poster2Title" data-sub-key="marketingPage.poster2Sub" role="button" tabindex="0" aria-label="Poster 2: BUSINESS WEBINAR">
+            <div class="poster-card-glass">
+              <div class="poster-img-wrap">
+                <img src="assets/images/poster-02.jpg" alt="Poster Business Webinar" loading="lazy">
+                <div class="poster-card-badge">2024</div>
+              </div>
+              <div class="poster-card-caption">
+                <div class="poster-caption-info">
+                  <div class="poster-caption-title" data-i18n="marketingPage.poster2Title">BUSINESS WEBINAR</div>
+                  <div class="poster-caption-sub" data-i18n="marketingPage.poster2Sub">Poster Hội Thảo Kinh Doanh Trực Tuyến · Online Session</div>
+                </div>
+                <div class="poster-card-tag" data-i18n="marketingPage.tagWebinar">Webinar</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: WOMEN'S DAY 8/3 -->
+          <div class="poster-card" data-index="2" data-glow="rgba(235, 95, 140, 0.45)" data-title-key="marketingPage.poster3Title" data-sub-key="marketingPage.poster3Sub" role="button" tabindex="0" aria-label="Poster 3: WOMEN'S DAY 8/3">
+            <div class="poster-card-glass">
+              <div class="poster-img-wrap">
+                <img src="assets/images/poster-03.jpg" alt="Poster Women's Day 8/3 - FPT University" loading="lazy">
+                <div class="poster-card-badge">2025</div>
+              </div>
+              <div class="poster-card-caption">
+                <div class="poster-caption-info">
+                  <div class="poster-caption-title" data-i18n="marketingPage.poster3Title">WOMEN'S DAY 8/3</div>
+                  <div class="poster-caption-sub" data-i18n="marketingPage.poster3Sub">Poster Ngày Hội Phụ Nữ · FPT University Đà Nẵng</div>
+                </div>
+                <div class="poster-card-tag" data-i18n="marketingPage.tagCulture">Văn hóa</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: MARUKAME UDON -->
+          <div class="poster-card" data-index="3" data-glow="rgba(236, 61, 16, 0.5)" data-title-key="marketingPage.poster4Title" data-sub-key="marketingPage.poster4Sub" role="button" tabindex="0" aria-label="Poster 4: MARUKAME UDON">
+            <div class="poster-card-glass">
+              <div class="poster-img-wrap">
+                <img src="assets/images/poster-04.jpg" alt="Poster Marukame Udon - Khao Bạn 50K" loading="lazy">
+                <div class="poster-card-badge">PROMO</div>
+              </div>
+              <div class="poster-card-caption">
+                <div class="poster-caption-info">
+                  <div class="poster-caption-title" data-i18n="marketingPage.poster4Title">MARUKAME UDON</div>
+                  <div class="poster-caption-sub" data-i18n="marketingPage.poster4Sub">Poster Chiến Dịch F&B Khuyến Mãi · Marukame Udon</div>
+                </div>
+                <div class="poster-card-tag" data-i18n="marketingPage.tagFnb">F&B</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: STREET FAIR 2028 -->
+          <div class="poster-card" data-index="4" data-glow="rgba(18, 175, 155, 0.45)" data-title-key="marketingPage.poster5Title" data-sub-key="marketingPage.poster5Sub" role="button" tabindex="0" aria-label="Poster 5: STREET FAIR 2028">
+            <div class="poster-card-glass">
+              <div class="poster-img-wrap">
+                <img src="assets/images/poster-05.jpg" alt="Poster Street Fair 2028 - DreamHack Esports" loading="lazy">
+                <div class="poster-card-badge">2028</div>
+              </div>
+              <div class="poster-card-caption">
+                <div class="poster-caption-info">
+                  <div class="poster-caption-title" data-i18n="marketingPage.poster5Title">STREET FAIR 2028</div>
+                  <div class="poster-caption-sub" data-i18n="marketingPage.poster5Sub">Poster Lễ Hội Đường Phố & Esports · Street Fair</div>
+                </div>
+                <div class="poster-card-tag" data-i18n="marketingPage.tagFestival">Lễ hội</div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.posters-carousel -->
+      </div><!-- /.posters-stage -->
+
+      <!-- Floating Glass Capsule Dock (Spotify Style) -->
+      <div class="container posters-dock-wrap">
+        <div class="poster-glass-capsule" id="posterGlassCapsule">
+          <!-- Left: Nav Controls -->
+          <div class="capsule-controls">
+            <button class="capsule-btn" id="posterPrevBtn" aria-label="Poster trước" data-i18n-aria="marketingPage.posterPrevAria">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="capsule-btn capsule-btn--play" id="posterAutoPlayBtn" aria-label="Tự động lướt" data-i18n-aria="marketingPage.posterAutoPlayAria">
+              <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+            </button>
+            <button class="capsule-btn" id="posterNextBtn" aria-label="Poster tiếp theo" data-i18n-aria="marketingPage.posterNextAria">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+
+          <!-- Center: Active Poster Track Info -->
+          <div class="capsule-info" id="capsuleInfo" role="button" tabindex="0" title="Bấm để phóng to" data-i18n-title="marketingPage.posterZoomTitle">
+            <div class="capsule-thumb">
+              <img id="capsuleThumbImg" src="assets/images/poster-01.jpg" alt="Poster thumbnail">
+            </div>
+            <div class="capsule-meta">
+              <div class="capsule-title" id="capsuleTitle">ĐÀ NẴNG</div>
+              <div class="capsule-sub" id="capsuleSub">Poster Sự Kiện Du Lịch · FPT University & Vietjet Air</div>
+            </div>
+            <!-- Spotify-like Animated Sound Bars -->
+            <div class="capsule-soundwave" aria-hidden="true">
+              <span class="bar bar-1"></span>
+              <span class="bar bar-2"></span>
+              <span class="bar bar-3"></span>
+              <span class="bar bar-4"></span>
+            </div>
+          </div>
+
+          <!-- Right: Zoom Lightbox -->
+          <div class="capsule-actions">
+            <button class="capsule-btn capsule-btn--zoom" id="posterZoomBtn" aria-label="Phóng to xem chi tiết" data-i18n-aria="marketingPage.posterZoomAria">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M9 21H3v-6"></path><path d="M21 3l-7 7"></path><path d="M3 21l7-7"></path></svg>
+            </button>
+          </div>
+        </div><!-- /.poster-glass-capsule -->
+      </div><!-- /.container -->
+
+      <!-- Lightbox Modal for Poster Zoom -->
+      <div class="poster-lightbox" id="posterLightbox" aria-hidden="true" role="dialog" aria-label="Xem chi tiết poster" data-i18n-aria="marketingPage.posterLightboxAria">
+        <div class="poster-lightbox-backdrop" id="lightboxBackdrop"></div>
+        <div class="poster-lightbox-dialog">
+          <button class="poster-lightbox-close" id="lightboxCloseBtn" aria-label="Đóng" data-i18n-aria="marketingPage.posterLightboxClose">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+          <div class="poster-lightbox-card">
+            <img id="lightboxImg" src="assets/images/poster-01.jpg" alt="Poster phóng to">
+            <div class="poster-lightbox-footer">
+              <div class="lightbox-footer-title" id="lightboxTitle">ĐÀ NẴNG</div>
+              <div class="lightbox-footer-sub" id="lightboxSub">Poster Sự Kiện Du Lịch · FPT University & Vietjet Air</div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.poster-lightbox -->
+
+    </section><!-- /.posters-block -->
+
+    <!-- ══ Core Services (dark, seamless) ══ -->
+    <section class="subpage-section dark" style="background: #0a0a0a; padding-top: var(--space-16); border-top: none;">
+      <div class="container">
+        <div class="section-intro-center">
+          <h2 data-i18n="marketingPage.servicesTitle">Các dịch vụ cốt lõi</h2>
+        </div>
+
+        <div class="cards-grid-3">
+          <div class="feature-card" style="border-top: 4px solid var(--color-accent-teal);">
+            <div class="feature-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="feature-card-title" data-i18n="marketingPage.s1Title">Chiến lược Content &amp; Mạng xã hội</h3>
+            <p class="feature-card-desc" data-i18n="marketingPage.s1Desc">
+              Xây dựng content pillars, lịch phát sóng nội dung đa nền tảng (TikTok, Facebook, YouTube, LinkedIn), viết kịch bản và tối ưu organic reach liên tục.
+            </p>
+          </div>
+
+          <div class="feature-card" style="border-top: 4px solid var(--color-main);">
+            <div class="feature-card-icon" style="background: rgba(236,61,16,0.12); color: var(--color-main);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+            </div>
+            <h3 class="feature-card-title" data-i18n="marketingPage.s2Title">Tư vấn Chiến lược &amp; Định vị Thương hiệu</h3>
+            <p class="feature-card-desc" data-i18n="marketingPage.s2Desc">
+              Định hình câu chuyện thương hiệu (Brand Narrative), xác định thông điệp khác biệt và hoàn thiện bộ tài liệu hướng dẫn tone-of-voice truyền thông.
+            </p>
+          </div>
+
+          <div class="feature-card" style="border-top: 4px solid rgba(255,255,255,0.25);">
+            <div class="feature-card-icon" style="background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.7);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+              </svg>
+            </div>
+            <h3 class="feature-card-title" data-i18n="marketingPage.s3Title">Sản xuất Chuỗi Video Ngắn (Short-Form)</h3>
+            <p class="feature-card-desc" data-i18n="marketingPage.s3Desc">
+              Lên ý tưởng, viết kịch bản, quay và dựng trọn gói chuỗi video ngắn giáo dục, truyền cảm hứng hoặc giới thiệu sản phẩm mang phong cách riêng.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ Bottom CTA Banner ══ -->
+    <section class="subpage-cta-banner">
+      <div class="container">
+        <div class="subpage-cta-inner">
+          <h2 class="subpage-cta-title" data-i18n="marketingPage.ctaTitle">Sẵn sàng nâng tầm nội dung của bạn?</h2>
+          <a href="contact.html?service=marketing" class="btn btn-light btn-lg" data-i18n="marketingPage.ctaBtn">
+            Gửi yêu cầu tư vấn Marketing →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reel Video Modal -->
+  <div class="reel-modal" id="reelModal" role="dialog" aria-modal="true" aria-label="Reel Player">
+    <div class="reel-modal-inner">
+      <button class="reel-modal-close" id="reelModalClose" aria-label="Đóng" data-i18n-aria="marketingPage.reelsCloseAria">✕</button>
+      <video id="reelModalVideo" controls playsinline preload="metadata" style="background:#000;"></video>
+      <div id="reelModalError" style="display:none; padding: 3rem 1.5rem; text-align: center; color: #fff;">
+        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎬</div>
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;" data-i18n="marketingPage.reelComingSoonTitle">Video đang được cập nhật!</h3>
+        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); max-width: 320px; margin: 0 auto;" data-i18n="marketingPage.reelComingSoonDesc">TheHjp đang hoàn thiện video này. Vui lòng quay lại sau hoặc liên hệ trao đổi trực tiếp.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer" style="background: #080808; color: rgba(255,255,255,0.7); padding: var(--space-8) 0; margin-top: 0;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
+      <div class="brand-logo" style="font-size: var(--text-xl);">
+        <span>TheHjp<span class="dot">.</span></span>
+      </div>
+      <div data-i18n="common.footerRights">Bản quyền © 2026 TheHjp. Mọi quyền được bảo lưu.</div>
+      <a href="#" class="back-to-top" data-i18n="common.backToTop">Lên đầu trang ↑</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/i18n.vi.js"></script>
+  <script src="js/i18n.en.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- ── Reel Thumbnail Injector ── -->
+  <script>
+    (function() {
+      var EXTS = ['jpg', 'png', 'webp'];
+
+      /* ── Thumbnail auto-detect extension ── */
+      function tryLoad(card, basePath, extIndex) {
+        if (extIndex >= EXTS.length) return;
+        var img = new Image();
+        img.className = 'reel-thumbnail';
+        img.alt = card.getAttribute('aria-label') || 'Reel thumbnail';
+        img.onload = function() {
+          var placeholder = card.querySelector('.reel-placeholder');
+          if (placeholder) placeholder.remove();
+          card.insertBefore(img, card.firstChild);
+        };
+        img.onerror = function() { tryLoad(card, basePath, extIndex + 1); };
+        img.src = basePath.includes('.') ? basePath : basePath + '.' + EXTS[extIndex];
+      }
+
+      document.querySelectorAll('.reel-card[data-reel-poster]').forEach(function(card) {
+        var poster = card.dataset.reelPoster;
+        if (!poster) return;
+        tryLoad(card, poster, 0);
+      });
+    })();
+  </script>
+
+  <!-- ── Reels Carousel Controller ── -->
+  <script>
+    (function () {
+      /* Generic carousel factory */
+      function makeCarousel(trackId, prevId, nextId, dotsId) {
+        const track   = document.getElementById(trackId);
+        const prevBtn = document.getElementById(prevId);
+        const nextBtn = document.getElementById(nextId);
+        const dotsEl  = document.getElementById(dotsId);
+        const cards   = Array.from(track.querySelectorAll('.reel-card'));
+        const total   = cards.length;
+        let current   = 0;
+        let dragging  = false;
+
+        function vc() {
+          if (window.innerWidth <= 520) return 2;
+          if (window.innerWidth <= 780) return 3;
+          if (window.innerWidth <= 1100) return 4;
+          return 5;
+        }
+
+        function buildDots() {
+          dotsEl.innerHTML = '';
+          const pages = Math.max(1, total - vc() + 1);
+          for (let i = 0; i < pages; i++) {
+            const d = document.createElement('div');
+            d.className = 'reels-dot' + (i === current ? ' active' : '');
+            d.addEventListener('click', () => goTo(i));
+            dotsEl.appendChild(d);
+          }
+        }
+
+        function updateDots() {
+          dotsEl.querySelectorAll('.reels-dot').forEach((d, i) =>
+            d.classList.toggle('active', i === current));
+        }
+
+        function goTo(idx) {
+          const maxIdx = Math.max(0, total - vc());
+          current = Math.min(Math.max(idx, 0), maxIdx);
+          const cardW  = cards[0].offsetWidth;
+          const gap    = 10;
+          track.style.transform = `translateX(-${current * (cardW + gap)}px)`;
+          prevBtn.disabled = current === 0;
+          nextBtn.disabled = current >= maxIdx;
+          updateDots();
+        }
+
+        prevBtn.addEventListener('click', () => goTo(current - 1));
+        nextBtn.addEventListener('click', () => goTo(current + 1));
+
+        /* Drag */
+        let dragStart = null;
+        track.addEventListener('mousedown', e => { dragStart = e.clientX; dragging = false; track.classList.add('is-dragging'); });
+        window.addEventListener('mousemove', e => { if (dragStart !== null && Math.abs(e.clientX - dragStart) > 6) dragging = true; });
+        window.addEventListener('mouseup', e => {
+          if (dragStart === null) return;
+          const delta = e.clientX - dragStart;
+          if (Math.abs(delta) > 55) goTo(delta < 0 ? current + 1 : current - 1);
+          dragStart = null;
+          track.classList.remove('is-dragging');
+        });
+
+        /* Touch */
+        let touchX = null;
+        track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+        track.addEventListener('touchend', e => {
+          if (touchX === null) return;
+          const delta = e.changedTouches[0].clientX - touchX;
+          if (Math.abs(delta) > 45) goTo(delta < 0 ? current + 1 : current - 1);
+          touchX = null;
+        }, { passive: true });
+
+        /* Prevent click-after-drag */
+        cards.forEach(card => {
+          card.addEventListener('click', e => { if (dragging) { e.stopPropagation(); dragging = false; } });
+          card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openReel(card); } });
+        });
+
+        /* Init */
+        buildDots();
+        goTo(0);
+
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(() => { buildDots(); goTo(0); }, 200);
+        });
+
+        return { cards, isDragging: () => dragging };
+      }
+
+      /* ── Instantiate both carousels ── */
+      const fnb = makeCarousel('fnbTrack', 'fnbPrev', 'fnbNext', 'fnbDots');
+      const sme = makeCarousel('smeTrack', 'smePrev', 'smeNext', 'smeDots');
+
+      /* ── Video Modal ── */
+      const modal      = document.getElementById('reelModal');
+      const modalVideo = document.getElementById('reelModalVideo');
+      const closeBtn   = document.getElementById('reelModalClose');
+      const modalError = document.getElementById('reelModalError');
+
+      modalVideo.onerror = function() {
+        modalVideo.style.display = 'none';
+        if (modalError) modalError.style.display = 'block';
+      };
+
+      function openReel(card) {
+        const src = card.dataset.reelSrc;
+        if (modalError) modalError.style.display = 'none';
+        modalVideo.style.display = 'block';
+        modalVideo.src = src;
+        modal.classList.add('is-open');
+        modalVideo.play().catch(() => {});
+        document.body.style.overflow = 'hidden';
+      }
+      function closeReel() {
+        modal.classList.remove('is-open');
+        modalVideo.pause();
+        modalVideo.src = '';
+        if (modalError) modalError.style.display = 'none';
+        modalVideo.style.display = 'block';
+        document.body.style.overflow = '';
+      }
+
+      [...fnb.cards, ...sme.cards].forEach(card => {
+        card.addEventListener('click', () => {
+          if (!fnb.isDragging() && !sme.isDragging()) openReel(card);
+        });
+      });
+      closeBtn.addEventListener('click', closeReel);
+      modal.addEventListener('click', e => { if (e.target === modal) closeReel(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeReel(); });
+    })();
+
+    /* ══════════════════════════════════════════
+       POSTER 3D COVERFLOW & GLASS CAPSULE LOGIC
+    ══════════════════════════════════════════ */
+    (function initPostersCoverflow() {
+      const stage = document.getElementById('postersStage');
+      const carousel = document.getElementById('postersCarousel');
+      if (!stage || !carousel) return;
+
+      const cards = Array.from(carousel.querySelectorAll('.poster-card'));
+      const glow = document.getElementById('postersAmbientGlow');
+      const prevBtn = document.getElementById('posterPrevBtn');
+      const nextBtn = document.getElementById('posterNextBtn');
+      const autoPlayBtn = document.getElementById('posterAutoPlayBtn');
+      const zoomBtn = document.getElementById('posterZoomBtn');
+      const capsuleInfo = document.getElementById('capsuleInfo');
+      const capsuleThumbImg = document.getElementById('capsuleThumbImg');
+      const capsuleTitle = document.getElementById('capsuleTitle');
+      const capsuleSub = document.getElementById('capsuleSub');
+
+      const lightbox = document.getElementById('posterLightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxTitle = document.getElementById('lightboxTitle');
+      const lightboxSub = document.getElementById('lightboxSub');
+      const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+      const lightboxBackdrop = document.getElementById('lightboxBackdrop');
+
+      let activeIndex = 0;
+      const total = cards.length;
+      let autoPlayTimer = null;
+      let isAutoPlaying = false;
+
+      function getTranslation(key) {
+        if (!key || typeof translations === 'undefined') return '';
+        const lang = (window.currentLang || (typeof currentLang !== 'undefined' ? currentLang : 'vi'));
+        const parts = key.split('.');
+        let val = translations[lang];
+        for (const part of parts) {
+          if (val) val = val[part];
+        }
+        return val || '';
+      }
+
+      function updateCards() {
+        const isMobile = window.innerWidth < 640;
+        const isTablet = window.innerWidth < 1024 && !isMobile;
+
+        const xSpacing = isMobile ? 85 : (isTablet ? 140 : 200);
+        const zSpacing = isMobile ? -60 : -90;
+        const rotateY = isMobile ? 22 : 32;
+
+        cards.forEach((card, i) => {
+          let diff = i - activeIndex;
+          if (diff > total / 2) diff -= total;
+          if (diff < -total / 2) diff += total;
+
+          if (diff === 0) {
+            // Active center card
+            card.style.transform = `translateX(0px) translateZ(110px) rotateY(0deg) scale(1.06)`;
+            card.style.zIndex = '10';
+            card.style.opacity = '1';
+            card.style.filter = 'brightness(1.05)';
+            card.classList.add('is-active');
+            card.setAttribute('aria-selected', 'true');
+          } else if (Math.abs(diff) === 1) {
+            // Immediate side cards
+            const sign = diff > 0 ? 1 : -1;
+            card.style.transform = `translateX(${sign * xSpacing}px) translateZ(${zSpacing}px) rotateY(${-sign * rotateY}deg) scale(0.9)`;
+            card.style.zIndex = '7';
+            card.style.opacity = '0.82';
+            card.style.filter = 'brightness(0.72)';
+            card.classList.remove('is-active');
+            card.setAttribute('aria-selected', 'false');
+          } else {
+            // Outer cards
+            const sign = diff > 0 ? 1 : -1;
+            card.style.transform = `translateX(${sign * xSpacing * 1.85}px) translateZ(${zSpacing * 2.2}px) rotateY(${-sign * (rotateY + 8)}deg) scale(0.76)`;
+            card.style.zIndex = '4';
+            card.style.opacity = '0.45';
+            card.style.filter = 'brightness(0.4)';
+            card.classList.remove('is-active');
+            card.setAttribute('aria-selected', 'false');
+          }
+        });
+
+        // Active Card metadata & ambient glow
+        const activeCard = cards[activeIndex];
+        const activeImg = activeCard.querySelector('img');
+        const glowColor = activeCard.dataset.glow || 'rgba(236, 61, 16, 0.4)';
+
+        if (glow) {
+          glow.style.background = `radial-gradient(ellipse at center, ${glowColor} 0%, rgba(20, 15, 12, 0.15) 55%, transparent 75%)`;
+        }
+
+        if (capsuleThumbImg && activeImg) {
+          capsuleThumbImg.src = activeImg.src;
+        }
+
+        const titleText = getTranslation(activeCard.dataset.titleKey) || activeCard.querySelector('.poster-caption-title')?.textContent;
+        const subText = getTranslation(activeCard.dataset.subKey) || activeCard.querySelector('.poster-caption-sub')?.textContent;
+
+        if (capsuleTitle) capsuleTitle.textContent = titleText;
+        if (capsuleSub) capsuleSub.textContent = subText;
+      }
+
+      function goTo(idx) {
+        activeIndex = (idx % total + total) % total;
+        updateCards();
+      }
+
+      function next() { goTo(activeIndex + 1); }
+      function prev() { goTo(activeIndex - 1); }
+
+      // Card interactions
+      cards.forEach((card, i) => {
+        card.addEventListener('click', () => {
+          if (i === activeIndex) {
+            openLightbox();
+          } else {
+            goTo(i);
+          }
+        });
+      });
+
+      if (prevBtn) prevBtn.addEventListener('click', prev);
+      if (nextBtn) nextBtn.addEventListener('click', next);
+
+      // Keyboard support
+      carousel.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') { prev(); e.preventDefault(); }
+        if (e.key === 'ArrowRight') { next(); e.preventDefault(); }
+        if (e.key === 'Enter' || e.key === ' ') { openLightbox(); e.preventDefault(); }
+      });
+
+      // Touch / Swipe
+      let touchStartX = 0;
+      let isDragging = false;
+      stage.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        isDragging = true;
+      }, { passive: true });
+
+      stage.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        const diffX = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(diffX) > 40) {
+          if (diffX < 0) next();
+          else prev();
+        }
+        isDragging = false;
+      }, { passive: true });
+
+      // Auto play toggle
+      function startAutoPlay() {
+        isAutoPlaying = true;
+        if (autoPlayBtn) {
+          autoPlayBtn.querySelector('.icon-play').style.display = 'none';
+          autoPlayBtn.querySelector('.icon-pause').style.display = 'block';
+        }
+        autoPlayTimer = setInterval(next, 3800);
+      }
+
+      function stopAutoPlay() {
+        isAutoPlaying = false;
+        if (autoPlayBtn) {
+          autoPlayBtn.querySelector('.icon-play').style.display = 'block';
+          autoPlayBtn.querySelector('.icon-pause').style.display = 'none';
+        }
+        if (autoPlayTimer) clearInterval(autoPlayTimer);
+      }
+
+      if (autoPlayBtn) {
+        autoPlayBtn.addEventListener('click', () => {
+          if (isAutoPlaying) stopAutoPlay();
+          else startAutoPlay();
+        });
+      }
+
+      // Lightbox modal logic
+      function openLightbox() {
+        const activeCard = cards[activeIndex];
+        const activeImg = activeCard.querySelector('img');
+        if (!activeImg || !lightbox) return;
+
+        lightboxImg.src = activeImg.src;
+        lightboxTitle.textContent = getTranslation(activeCard.dataset.titleKey) || activeCard.querySelector('.poster-caption-title')?.textContent;
+        lightboxSub.textContent = getTranslation(activeCard.dataset.subKey) || activeCard.querySelector('.poster-caption-sub')?.textContent;
+        lightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      if (zoomBtn) zoomBtn.addEventListener('click', openLightbox);
+      if (capsuleInfo) capsuleInfo.addEventListener('click', openLightbox);
+      if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
+      if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox && lightbox.classList.contains('is-open')) {
+          closeLightbox();
+        }
+      });
+
+      // Responsive resize
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(updateCards, 150);
+      });
+
+      // Sync on language change
+      function syncLanguage() {
+        updateCards();
+        if (lightbox && lightbox.classList.contains('is-open')) {
+          const activeCard = cards[activeIndex];
+          if (lightboxTitle) lightboxTitle.textContent = getTranslation(activeCard.dataset.titleKey) || '';
+          if (lightboxSub) lightboxSub.textContent = getTranslation(activeCard.dataset.subKey) || '';
+        }
+      }
+
+      window.addEventListener('languageChanged', syncLanguage);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => setTimeout(syncLanguage, 60));
+      });
+
+      // Initialize
+      updateCards();
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => setTimeout(syncLanguage, 20));
+      } else {
+        setTimeout(syncLanguage, 20);
+      }
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheHjp — Marketer & Filmmaker Portfolio</title>
+  <meta name="description" content="Portfolio cá nhân của TheHjp — Marketer kiêm solo filmmaker / content creator. Kể câu chuyện của bạn bằng đúng chất giọng của bạn.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="TheHjp">
+  <link rel="canonical" href="https://thehjp.id.vn/index.html">
+  <link rel="icon" type="image/png" href="assets/images/thehjp-mascot.png">
+  <link rel="apple-touch-icon" href="assets/images/thehjp-mascot.png">
+  <meta property="og:title" content="TheHjp — Marketer & Filmmaker Portfolio">
+  <meta property="og:description" content="Portfolio cá nhân của TheHjp — Marketer kiêm solo filmmaker / content creator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thehjp.id.vn/index.html">
+  <meta property="og:image" content="https://thehjp.id.vn/assets/images/TheHjp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TheHjp — Marketer & Filmmaker Portfolio">
+  <meta name="twitter:description" content="Portfolio cá nhân của TheHjp — Marketer kiêm solo filmmaker / content creator.">
+  <meta name="twitter:image" content="https://thehjp.id.vn/assets/images/TheHjp.png">
+
+  <!-- Google Fonts: Anton, Inter, Playfair Display, Dancing Script, Caveat, Alfa Slab One -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-home">
+
+  <!-- =====================================================================
+       INTRO SCREEN — Split Curtain Photo Reveal
+       ===================================================================== -->
+  <div class="intro-screen" id="introScreen" aria-hidden="false">
+    <!-- Left Panel (ảnh nửa trái) -->
+    <div class="intro-panel intro-panel--left" id="introPanelLeft">
+      <div class="intro-panel-img" style="background-image: url('assets/images/me.jpg')"></div>
+    </div>
+
+    <!-- Right Panel (ảnh nửa phải) -->
+    <div class="intro-panel intro-panel--right" id="introPanelRight">
+      <div class="intro-panel-img" style="background-image: url('assets/images/me.jpg')"></div>
+    </div>
+
+    <!-- Center UI overlay -->
+    <div class="intro-center" id="introCenter">
+      <!-- Name badge -->
+      <div class="intro-name-badge">
+        <span class="intro-name">TheHjp<span class="intro-dot">.</span></span>
+      </div>
+
+      <!-- Enter button -->
+      <button class="intro-enter-btn" id="introEnterBtn" aria-label="Explore homepage">
+        <span class="intro-enter-text" data-i18n="common.exploreBtn">Khám phá</span>
+        <span class="intro-enter-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </span>
+      </button>
+
+      <!-- Scroll hint -->
+      <div class="intro-scroll-hint" aria-hidden="true">
+        <div class="intro-scroll-line"></div>
+        <span>scroll</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Film Grain Noise Overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Header Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="TheHjp Home">
+        <div class="brand-logo-icon">
+          <img src="assets/images/thehjp-mascot.png" alt="TheHjp Avatar">
+        </div>
+        <span>TheHjp<span class="dot">.</span></span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-desktop">
+          <li><a href="index.html" class="nav-link active" data-i18n="nav.home">Trang chủ</a></li>
+          <li><a href="about.html" class="nav-link" data-i18n="nav.about">Về TheHjp</a></li>
+          <li><a href="marketing.html" class="nav-link" data-i18n="nav.marketing">Marketing & Content</a></li>
+          <li><a href="filmmaking.html" class="nav-link" data-i18n="nav.filmmaking">Filmmaking & Media</a></li>
+          <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Liên hệ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <div class="lang-switch" role="group" aria-label="Language selection">
+          <button class="lang-btn active" data-lang="vi" aria-label="Chuyển sang tiếng Việt">VI</button>
+          <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+        </div>
+
+        <a href="contact.html" class="btn btn-primary btn-sm" data-i18n="nav.cta">Bắt đầu dự án</a>
+
+        <button class="mobile-toggle" aria-label="Open mobile menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer">
+      <a href="index.html" class="nav-link active" data-i18n="nav.home">Trang chủ</a>
+      <a href="about.html" class="nav-link" data-i18n="nav.about">Về TheHjp</a>
+      <a href="marketing.html" class="nav-link" data-i18n="nav.marketing">Marketing & Content</a>
+      <a href="filmmaking.html" class="nav-link" data-i18n="nav.filmmaking">Filmmaking & Media</a>
+      <a href="contact.html" class="nav-link" data-i18n="nav.contact">Liên hệ</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ==========================================================================
+         01 — HERO SECTION · EDITORIAL ORANGE LAYOUT (100% DESIGN MATCH)
+         ========================================================================== -->
+    <section class="home-hero" id="hero-1">
+      <div class="home-hero__container">
+        <div class="home-hero__grid">
+
+          <!-- Left Column, Top Row: Headline -->
+          <div class="home-hero__left-top">
+            <h1 class="home-hero__title-left" data-i18n="hero1.line1">The Art of<br>Creativity</h1>
+          </div>
+
+          <!-- Center Column, Spanning Both Rows: Mascot Face -->
+          <div class="home-hero__mascot-cell">
+            <img
+              src="assets/images/TheHjp-hero-trimmed.png"
+              alt="TheHjp Mascot"
+              class="home-hero__mascot-img"
+              id="mascotImage"
+            >
+          </div>
+
+          <!-- Right Column, Top Row: Roles (Black Serif, Right-Aligned) -->
+          <div class="home-hero__right-top">
+            <div class="home-hero__roles" aria-label="Professional Roles">
+              <span data-i18n="hero1.roleFilmmaker">Filmmaker</span>
+              <span data-i18n="hero1.roleCreator">Content Creator</span>
+              <span data-i18n="hero1.roleMarketer">Marketer</span>
+            </div>
+          </div>
+
+          <!-- Left Column, Bottom Row: TheHjp Wordmark + About Me Pill -->
+          <div class="home-hero__left-bottom">
+            <div class="home-hero__brand-row">
+              <a href="index.html" class="home-hero__wordmark" aria-label="TheHjp Home">TheHjp</a>
+              <a href="about.html" class="home-hero__about-btn" data-i18n="hero1.ctaAbout">About Me</a>
+            </div>
+          </div>
+
+          <!-- Right Column, Bottom Row: Headline Right (Expressing Yourself.) -->
+          <div class="home-hero__right-bottom">
+            <div class="home-hero__title-right" data-i18n="hero1.line2">Expressing<br>Yourself.</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         02 — STORYTELLING CARD SECTION (DARK CARD ON ORANGE BACKGROUND)
+         ========================================================================== -->
+    <section class="home-story" id="hero-2">
+      <div class="home-story__container">
+        <div class="home-story__card">
+
+          <!-- Top Row: Script + Orange Headline + Body Text | Showreel Video -->
+          <div class="home-story__top-row">
+            <!-- Left Text Column -->
+            <div class="home-story__left-col">
+              <p class="home-story__script" data-i18n="hero2.subtagline">Kể câu chuyện của bạn</p>
+              <h2 class="home-story__title" data-i18n="hero2.tagline">Bằng chính<br>chất giọng riêng.</h2>
+              <p class="home-story__body" data-i18n="hero2.body">
+                Dù bạn là một thương hiệu đang tìm kiếm định hướng, hay một dự án phim cần góc nhìn mới mẻ — mình ở đây để giúp câu chuyện ấy được kể đúng cách và chạm đến người xem.
+              </p>
+            </div>
+
+            <!-- Right Video Box -->
+            <div class="home-story__right-col">
+              <div class="home-story__video-box open-showreel-btn" role="button" tabindex="0" aria-label="Xem Showreel TheHjp" title="Phát Showreel">
+                <img src="assets/images/showreel-cover.jpg" alt="TheHjp Showreel - Creating from Nothing" class="home-story__video-cover">
+                <div class="home-story__play-btn" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Row: Filmmaker Camera Image with Explore CTA -->
+          <div class="home-story__bottom-row">
+            <div class="home-story__image-wrap">
+              <img src="assets/images/Image(01).jpg" alt="Filmmaker with camera" class="home-story__filmmaker-img">
+              <a href="filmmaking.html" class="home-story__film-cta">
+                <span class="home-story__film-cta-text" data-i18n="hero2.ctaFilm">Khám phá dự án phim</span>
+                <span class="home-story__film-cta-icon" aria-hidden="true">
+                  <img src="assets/images/Icon.png" alt="">
+                </span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         03 — SERVICES SECTION · STRATEGIC THINKING (ORANGE BG + BLACK SERIF)
+         ========================================================================== -->
+    <section class="home-services" id="services">
+      <div class="home-services__container">
+        <div class="home-services__inner">
+
+          <!-- Left Column: Title & Marketing CTA Pill -->
+          <div class="home-services__left-col">
+            <h2 class="home-services__title" data-i18n="homeMarketingPreview.title">
+              Tư duy chiến lược kết hợp<br>sáng tạo thực chiến.
+            </h2>
+            <div class="home-services__cta-wrap">
+              <a href="marketing.html" class="home-services__cta-pill" data-i18n="homeMarketingPreview.cta">
+                Khám phá dịch vụ Marketing →
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Numbered Service List with 4 Horizontal Dividers -->
+          <div class="home-services__right-col">
+            <ul class="home-services__list">
+              <li class="home-services__item">
+                <span class="home-services__num">01</span>
+                <span class="home-services__name" data-i18n="service.brandStrategy">Brand Strategy</span>
+              </li>
+              <li class="home-services__item">
+                <span class="home-services__num">02</span>
+                <span class="home-services__name" data-i18n="service.visualIdentity">Visual Identity</span>
+              </li>
+              <li class="home-services__item">
+                <span class="home-services__num">03</span>
+                <span class="home-services__name" data-i18n="service.filmmaking">Filmmaking</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         04 — NEXT MOVE CTA BANNER (DARK ROUNDED CARD ON ORANGE BACKGROUND)
+         ========================================================================== -->
+    <section class="home-cta-section" id="start-project">
+      <div class="home-cta__container">
+        <div class="home-cta__card">
+          <div class="home-cta__text-group">
+            <h2 class="home-cta__headline" data-i18n="common.startProjectCTA">Bắt đầu dự án tiếp theo cùng THEHJP</h2>
+            <span class="home-cta__sub" data-i18n="common.ctaBannerSub">Khởi động dự án</span>
+          </div>
+          <a href="contact.html" class="home-cta__btn" aria-label="Start a project">
+            <img src="assets/images/Icon(2).png" alt="Arrow" class="home-cta__btn-icon">
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       05 — FOOTER (SOLID ORANGE BACKGROUND, WHITE TYPOGRAPHY)
+       ========================================================================== -->
+  <footer class="home-footer" id="site-footer">
+    <div class="home-footer__container">
+      <span class="home-footer__brand">THEHJP</span>
+      <span class="home-footer__copy" data-i18n="common.footerRights">Bản quyền © 2026 TheHjp. Mọi quyền được bảo lưu.</span>
+      <a href="#" class="home-footer__top-link" data-i18n="common.backToTop">Về đầu trang</a>
+    </div>
+  </footer>
+
+  <!-- Video Modal for Showreel -->
+  <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="TheHjp Showreel Player">
+    <div class="video-modal-content">
+      <button class="video-modal-close" id="closeShowreel" aria-label="Close Showreel">✕</button>
+      <div class="video-player-container" style="position:relative; width:100%; padding-top:56.25%;">
+        <video
+          id="showreelVideo"
+          controls
+          playsinline
+          webkit-playsinline
+          preload="metadata"
+          style="position:absolute; top:0; left:0; width:100%; height:100%; background:#000; object-fit:contain;">
+          <source src="assets/videos/showreel.mp4" type="video/mp4">
+          Trình duyệt của bạn không hỗ trợ thẻ video.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/i18n.vi.js"></script>
+  <script src="js/i18n.en.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Showreel Video Modal Controller -->
+  <script>
+    (function () {
+      const modal    = document.getElementById('videoModal');
+      const video    = document.getElementById('showreelVideo');
+      const closeBtn = document.getElementById('closeShowreel');
+      const openBtns = document.querySelectorAll('.open-showreel-btn');
+
+      function openModal() {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        video.play();
+      }
+
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        video.pause();
+        video.currentTime = 0;
+      }
+
+      openBtns.forEach(function(btn) {
+        btn.addEventListener('click', openModal);
+      });
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+      });
+    })();
+  </script>
+</body>
+</html>
